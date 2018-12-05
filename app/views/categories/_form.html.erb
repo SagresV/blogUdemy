@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="jumbotron">
+         <fieldset>
+            <h1 class="text-center offset-md-2 col-md-8"><%= "#{title} Categoria" %></h1>
+            <br>
+            <%= form_with(model: category) do |form| %>
+              <div class="form-group row">
+                <%= form.label "Nombre:", class:"offset-md-2 col-md-3 col-form-label text-right"%>
+                <%= form.text_field :name, id: :category_name, class:"col-md-4 form-control"%>
+              </div>
+              <div class="form-group row">
+                <%= form.label "Color:", class:"offset-md-2 col-md-3 col-form-label text-right"%>
+                <%= form.color_field :color, id: :category_color, class:"col-md-4 form-control"%>
+              </div>
+              <div class="form-group row">
+                <div class="container text-center">
+                  <%= form.submit "Aceptar", class:"btn btn-success col-md-3" %>
+                  <%= link_to 'Atras', categories_path, class:"btn btn-info col-md-3" %>
+                </div>
+                
+              </div>
+            <% end %>          
+      </div>
+    </div>
+  </div>
+</div>
